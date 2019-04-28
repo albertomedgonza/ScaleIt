@@ -20,7 +20,9 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        weightLabel.text = weightAmount
+    
         if let weightedItem = weightedItem {
             weightedItemField.text = weightedItem
             self.navigationItem.title = "Edit Weighted Item"

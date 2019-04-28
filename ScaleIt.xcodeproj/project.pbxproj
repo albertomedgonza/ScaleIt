@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		711CD2B9227370BB00E99AF9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711CD2B8227370BB00E99AF9 /* TableViewController.swift */; };
-		711CD2BB2274ED4400E99AF9 /* ScaleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711CD2BA2274ED4400E99AF9 /* ScaleTest.swift */; };
 		711CD2BD2275434B00E99AF9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711CD2BC2275434B00E99AF9 /* DetailViewController.swift */; };
 		7173E1DD22724662001A4D31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173E1DC22724662001A4D31 /* AppDelegate.swift */; };
 		7173E1DF22724662001A4D31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173E1DE22724662001A4D31 /* ViewController.swift */; };
@@ -20,7 +19,6 @@
 
 /* Begin PBXFileReference section */
 		711CD2B8227370BB00E99AF9 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		711CD2BA2274ED4400E99AF9 /* ScaleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTest.swift; sourceTree = "<group>"; };
 		711CD2BC2275434B00E99AF9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7173E1D922724661001A4D31 /* ScaleIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScaleIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7173E1DC22724662001A4D31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 				7173E1DC22724662001A4D31 /* AppDelegate.swift */,
 				7173E1EE22729BF1001A4D31 /* IntroPageViewController.swift */,
 				7173E1DE22724662001A4D31 /* ViewController.swift */,
-				711CD2BA2274ED4400E99AF9 /* ScaleTest.swift */,
 				711CD2B8227370BB00E99AF9 /* TableViewController.swift */,
 				711CD2BC2275434B00E99AF9 /* DetailViewController.swift */,
 				7173E1E022724662001A4D31 /* Main.storyboard */,
@@ -151,7 +148,6 @@
 				7173E1EF22729BF1001A4D31 /* IntroPageViewController.swift in Sources */,
 				711CD2B9227370BB00E99AF9 /* TableViewController.swift in Sources */,
 				711CD2BD2275434B00E99AF9 /* DetailViewController.swift in Sources */,
-				711CD2BB2274ED4400E99AF9 /* ScaleTest.swift in Sources */,
 				7173E1DD22724662001A4D31 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
