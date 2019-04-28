@@ -8,21 +8,23 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UIViewController {
 
     @IBOutlet weak var editBarItem: UIBarButtonItem!
     @IBOutlet weak var backBarItem: UIBarButtonItem!
+    @IBOutlet var tableView: UITableView!
+    
     
     var defaultsData = UserDefaults.standard
     var weightedItemsArray = [String]()
     var weightArray = [String]()
 
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
+
         weightedItemsArray = defaultsData.stringArray(forKey: "weightedItemsArray") ?? [String]()
         weightArray = defaultsData.stringArray(forKey: "weightsArray") ?? [String]()
 
@@ -30,7 +32,7 @@ class TableViewController: UITableViewController {
             defaultsData.set(weightArray, forKey: "weightArray")
             defaultsData.set(weightedItemsArray, forKey: "weightedItemsArray")
         }
-        
+
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "EditItem" {
                 let destination = segue.destination as! DetailViewController
@@ -71,25 +73,30 @@ class TableViewController: UITableViewController {
                 backBarItem.isEnabled = false
                 editBarItem.title = "Done"
     }
-    
+
     }
 }
 
 extension TableViewController: UITableViewDelegate, UITableViewDataSource {
-        
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func saveDefaultsData() {
+        defaultsData.set(weightArray, forKey: "weightArray")
+        defaultsData.set(weightedItemsArray, forKey: "weightedItemsArray")
+    }
+
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return weightedItemsArray.count
         }
-        
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             cell.textLabel?.text = weightedItemsArray[indexPath.row]
             cell.detailTextLabel?.text = weightArray[indexPath.row]
             return cell
         }
-        
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
             if editingStyle == .delete {
                 weightedItemsArray.remove(at: indexPath.row)
                 weightArray.remove(at: indexPath.row)
@@ -97,20 +104,21 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
                 saveDefaultsData()
             }
         }
-        
+
         func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
             let weightedItemToMove = weightedItemsArray[sourceIndexPath.row]
             let weightToMove = weightArray[sourceIndexPath.row]
             weightedItemsArray.remove(at: sourceIndexPath.row)
             weightArray.remove(at: sourceIndexPath.row)
-            weightedItemsArray.insert(itemToMove, at: destinationIndexPath.row)
-            weightArray.insert(noteToMove, at: destinationIndexPath.row)
+            weightedItemsArray.insert(weightedItemToMove, at: destinationIndexPath.row)
+            weightArray.insert(weightToMove, at: destinationIndexPath.row)
             saveDefaultsData()
         }
     }
 
-
-
+//
+//
+//
 
 
 

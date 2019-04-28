@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 }
+   
 
 //    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -47,6 +48,15 @@ class ViewController: UIViewController {
     @IBAction func saveButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "SaveButton", sender: nil)
     }
-}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is DetailViewController {
+            let destination = segue.destination as! DetailViewController
+            destination.weightAmount = forceLabel.text
+        }
+    }
+    
+        }
+
 
 

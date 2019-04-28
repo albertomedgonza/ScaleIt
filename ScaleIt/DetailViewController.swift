@@ -11,7 +11,8 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var weightedItemField: UITextField!
-    @IBOutlet weak var weightView: UITextView!
+    @IBOutlet weak var weightLabel: UILabel!
+    
     
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
     var weightedItem: String?
@@ -27,7 +28,7 @@ class DetailViewController: UIViewController {
             self.navigationItem.title = "New Weighted Item"
         }
         if let weightAmount = weightAmount {
-            weightView.text = weightAmount
+            weightLabel.text = weightAmount
         
             
         }
@@ -38,7 +39,7 @@ class DetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "UnwindFromSave" {
         weightedItem = weightedItemField.text
-        weightAmount = weightView.text
+        weightAmount = weightLabel.text
     }
 }
 
@@ -53,8 +54,8 @@ func enableDisableSaveButton() {
         enableDisableSaveButton()
     }
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        let isPresentingInAddMode = presentingViewController is UINavigationController
-        if isPresentingInAddMode {
+        let isPresentingInEditMode = presentingViewController is UINavigationController
+        if isPresentingInEditMode {
             dismiss(animated: true, completion: nil)
         } else {
             navigationController?.popViewController(animated: true)
