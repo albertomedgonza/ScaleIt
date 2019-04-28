@@ -46,14 +46,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "SaveButton", sender: nil)
+        
+        if forceLabel.text != "% Force" {
+            performSegue(withIdentifier: "SaveButton", sender: nil)
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is DetailViewController {
             let destination = segue.destination as! DetailViewController
-            destination.weightAmount = forceLabel.text
+            destination.weightAmount = forceLabel.text!
         }
+       
+        
     }
     
         }
