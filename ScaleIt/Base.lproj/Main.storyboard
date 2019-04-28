@@ -36,10 +36,10 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="0jM-Lf-D3P">
-                                <rect key="frame" x="0.0" y="199" width="414" height="498"/>
+                                <rect key="frame" x="0.0" y="243" width="414" height="410"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MG9-YO-edL">
-                                <rect key="frame" x="130" y="705" width="154" height="48"/>
+                                <rect key="frame" x="130" y="661" width="154" height="92"/>
                                 <color key="backgroundColor" red="0.82339388132095337" green="0.81176567077636719" blue="0.81176477670669556" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="154" id="BfU-5h-DS5"/>
@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nei-Kn-1VK">
-                                <rect key="frame" x="16" y="114" width="187.5" height="40"/>
+                                <rect key="frame" x="16" y="114" width="382" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="aDa-2f-ulM"/>
                                     <constraint firstAttribute="height" constant="40" id="yOp-rv-fia"/>
@@ -184,8 +184,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Weighted Item Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ogM-ov-Oq5">
-                                <rect key="frame" x="16" y="162" width="187.5" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Weighted Item Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ogM-ov-Oq5">
+                                <rect key="frame" x="16" y="162" width="378" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TQO-3H-mbU"/>
+                                    <constraint firstAttribute="width" constant="378" id="WJK-YZ-4Mh"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -194,7 +198,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqo-Nd-ohU">
-                                <rect key="frame" x="16" y="210" width="187.5" height="31"/>
+                                <rect key="frame" x="16" y="210" width="382" height="31"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -211,10 +215,14 @@
                         <constraints>
                             <constraint firstItem="uqo-Nd-ohU" firstAttribute="top" secondItem="ogM-ov-Oq5" secondAttribute="bottom" constant="18" id="3xM-UJ-gEs"/>
                             <constraint firstItem="ogM-ov-Oq5" firstAttribute="leading" secondItem="dct-KH-oLX" secondAttribute="leading" constant="16" id="8dw-fn-NLF"/>
+                            <constraint firstItem="dct-KH-oLX" firstAttribute="trailing" secondItem="ogM-ov-Oq5" secondAttribute="trailing" id="IU2-VV-jrF"/>
                             <constraint firstItem="uqo-Nd-ohU" firstAttribute="leading" secondItem="dct-KH-oLX" secondAttribute="leading" constant="16" id="JAj-Rf-emU"/>
+                            <constraint firstItem="ogM-ov-Oq5" firstAttribute="top" secondItem="nei-Kn-1VK" secondAttribute="bottom" constant="8" id="OH4-5k-sug"/>
                             <constraint firstItem="dct-KH-oLX" firstAttribute="trailing" secondItem="ogM-ov-Oq5" secondAttribute="trailing" constant="16" id="Vlw-4j-xbe"/>
+                            <constraint firstItem="uqo-Nd-ohU" firstAttribute="top" secondItem="ogM-ov-Oq5" secondAttribute="bottom" constant="18" id="ZeX-9n-sIK"/>
                             <constraint firstItem="ogM-ov-Oq5" firstAttribute="top" secondItem="nei-Kn-1VK" secondAttribute="bottom" constant="8" id="dAJ-kf-wYk"/>
                             <constraint firstItem="nei-Kn-1VK" firstAttribute="top" secondItem="dct-KH-oLX" secondAttribute="top" constant="26" id="i2X-0l-x3A"/>
+                            <constraint firstItem="ogM-ov-Oq5" firstAttribute="leading" secondItem="dct-KH-oLX" secondAttribute="leading" id="mfE-by-cyw"/>
                             <constraint firstItem="dct-KH-oLX" firstAttribute="trailing" secondItem="nei-Kn-1VK" secondAttribute="trailing" constant="16" id="ngj-8r-b4P"/>
                             <constraint firstItem="nei-Kn-1VK" firstAttribute="leading" secondItem="dct-KH-oLX" secondAttribute="leading" constant="16" id="tr5-Ht-1Jq"/>
                             <constraint firstItem="dct-KH-oLX" firstAttribute="trailing" secondItem="uqo-Nd-ohU" secondAttribute="trailing" constant="16" id="wWr-HM-7iv"/>
@@ -244,12 +252,12 @@
         <scene sceneID="jsN-y2-qVQ">
             <objects>
                 <tableViewController id="Vgg-5I-iMJ" customClass="TableViewController" customModule="ScaleIt" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="b3k-if-fmB">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="b3k-if-fmB" customClass="Tab">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RGb-dN-c4j">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="RGb-dN-c4j">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RGb-dN-c4j" id="cal-f5-l4d">
@@ -283,14 +291,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Weighted Items" id="5wm-ob-Xt7">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="BIw-Kq-zP5">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="BIw-Kq-zP5">
                             <connections>
-                                <action selector="editBarButtonPressed:" destination="Vgg-5I-iMJ" id="gUD-ua-DZh"/>
+                                <action selector="backBarButtonPressed:" destination="Vgg-5I-iMJ" id="pNM-hR-0GR"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="backItem" id="kUQ-ga-U18"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="3qq-rk-ab2"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="backBarItem" destination="BIw-Kq-zP5" id="uZD-da-WhV"/>
                         <outlet property="editBarButton" destination="BIw-Kq-zP5" id="aJS-t3-sXI"/>
+                        <outlet property="editBarItem" destination="3qq-rk-ab2" id="7q8-K0-14b"/>
                         <outlet property="tableView" destination="b3k-if-fmB" id="85R-P4-ev6"/>
                     </connections>
                 </tableViewController>
