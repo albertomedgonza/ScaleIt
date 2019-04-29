@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
         
             
         }
-        enableDisableSaveButton()
+        enableDisableButton()
         weightedItemField.becomeFirstResponder()
     
     }
@@ -45,24 +45,30 @@ class DetailViewController: UIViewController {
     }
 }
 
-func enableDisableSaveButton() {
-    if let weightedItemFieldCount = weightedItemField.text?.count, weightedItemFieldCount > 0 {
-        saveBarButton.isEnabled = true
-    } else {
-        saveBarButton.isEnabled = false
+    func enableDisableButton() {
+        if let weightedItemFieldCount = weightedItemField.text?.count, weightedItemFieldCount > 0 {
+            print("Field count is more than 0")
+            saveBarButton.isEnabled = true
+        } else {
+            saveBarButton.isEnabled = false
+            print("Field count is 0")
+        }
     }
-}
+    
     @IBAction func weightedItemFieldChanged(_ sender: Any) {
-        enableDisableSaveButton()
+        enableDisableButton()
     }
+    
+    
+    
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        let isPresentingInEditMode = presentingViewController is UINavigationController
-        if isPresentingInEditMode {
+        let isPresentingInSaveMode = presentingViewController is UINavigationController
+        if isPresentingInSaveMode {
             dismiss(animated: true, completion: nil)
         } else {
             navigationController?.popViewController(animated: true)
         }
     }
-    }
-    
 
+
+}

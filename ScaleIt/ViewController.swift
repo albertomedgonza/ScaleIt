@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIBarButtonItem!
+    @IBOutlet weak var backBarButton: UIBarButtonItem!
     
     @IBOutlet weak var forceLabel: UILabel!
     
@@ -46,23 +47,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        
-        if forceLabel.text != "% Force" {
+        print("Segue save button is working")
             performSegue(withIdentifier: "SaveButton", sender: nil)
-        }
-        
+    
+    }
+    @IBAction func backButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "backItem", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is DetailViewController {
+        if segue.identifier == "SaveButton" {
             let destination = segue.destination as! DetailViewController
             destination.weightAmount = forceLabel.text!
         }
-       
         
     }
-    
-        }
+    func unwindToViewControl (_ sender: UIStoryboardSegue) {
+        
+    }
+        
+    }
+
+
 
 
 
