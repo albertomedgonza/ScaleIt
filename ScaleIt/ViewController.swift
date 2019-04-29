@@ -41,6 +41,11 @@ class ViewController: UIViewController {
             }
         }
     }
+    /*@IBAction func unwindFromDetailViewController(segue: UIStoryboardSegue) {
+        let sourceViewController = segue.source as! DetailViewController
+        
+        
+    }*/
     
     @IBAction func refreshButtonPressed(_ sender: Any) {
         forceLabel.text = "0 gram"

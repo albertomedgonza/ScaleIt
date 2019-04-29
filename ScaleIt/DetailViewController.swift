@@ -12,6 +12,9 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var weightedItemField: UITextField!
     @IBOutlet weak var weightLabel: UILabel!
+    var defaultsData = UserDefaults.standard
+    var weightedItemsArray = [String]()
+    var weightArray = [String]()
     
     
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
@@ -39,10 +42,13 @@ class DetailViewController: UIViewController {
     
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "UnwindFromSave" {
-        weightedItem = weightedItemField.text
-        weightAmount = weightLabel.text
-    }
+        weightedItemsArray = defaultsData.stringArray(forKey: "weightedItemsArray") ?? [String]()
+        weightArray = defaultsData.stringArray(forKey: "weightArray") ?? [String]()
+        weightedItemsArray.append(weightedItemField.text!)
+        weightArray.append(weightLabel.text!)
+        defaultsData.set(weightArray, forKey: "weightArray")
+        defaultsData.set(weightedItemsArray, forKey: "weightedItemsArray")
+        
 }
 
     func enableDisableButton() {
@@ -69,6 +75,9 @@ class DetailViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         }
     }
+    
+
+    
 
 
 }

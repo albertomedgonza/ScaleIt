@@ -27,7 +27,7 @@ class TableViewController: UIViewController {
         tableView.dataSource = self
 
         weightedItemsArray = defaultsData.stringArray(forKey: "weightedItemsArray") ?? [String]()
-        weightArray = defaultsData.stringArray(forKey: "weightsArray") ?? [String]()
+        weightArray = defaultsData.stringArray(forKey: "weightArray") ?? [String]()
 
         func saveDefaultsData() {
             defaultsData.set(weightArray, forKey: "weightArray")
@@ -46,23 +46,10 @@ class TableViewController: UIViewController {
                 }
             }
         }
-        func unwindtoTableView(_ sender: UIStoryboardSegue) { }
-        
-//        func unwindFromDetailViewController(segue: UIStoryboardSegue) {
-//            let sourceViewController = segue.source as! DetailViewController
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                weightedItemsArray[indexPath.row] = sourceViewController.weightedItem!
-//                weightArray[indexPath.row] = sourceViewController.weightAmount!
-//                tableView.reloadRows(at: [indexPath], with: .automatic)
-//            } else {
-//                let newIndexPath = IndexPath(row: weightedItemsArray.count, section: 0)
-//                weightedItemsArray.append(sourceViewController.weightedItem!)
-//                weightArray.append(sourceViewController.weightAmount!)
-//                tableView.insertRows(at: [newIndexPath], with: .automatic)
-//            }
-//            saveDefaultsData()
-//    }
+
     }
+    
+
         @IBAction func backBarButtonPressed(_ sender: Any) {
             performSegue(withIdentifier: "backItem", sender: nil)
 
@@ -122,57 +109,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 
-//        tableView.delegate = self
-//        tableView.dataSource = self
-//
-//
-//        //        for index in 0..<partyItems.count{
-//        //            partyListItems.append(PartyListItem(partyItem: partyItems[index], personResponsible: ""))
-//        //        }
-//    }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "EditItem" {
-//            let destination = segue.destination as! DetailViewController
-//            let selectedIndexPath = tableView.indexPathForSelectedRow!
-//            destination.weightedItem = weightedItemsArray[selectedIndexPath.row]
-//        } else {
-//            if let selectedPath = tableView.indexPathForSelectedRow {
-//                tableView.deselectRow(at: selectedPath, animated: true)
-//            }
-//        }
-//    }
-//
-//    @IBAction func unwindFromItemDetailViewController(segue: UIStoryboardSegue) {
-//        let source = segue.source as! DetailViewController
-//        if let selectedIndexPath = tableView.indexPathForSelectedRow {
-//            weightedItemsArray[selectedIndexPath.row] = source.weightAmount!
-//            tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
-//        } else {
-//            let indexPath = IndexPath(row: weightedItemsArray.count, section: 0)
-//            weightedItemsArray.append(source.weightedItem!)
-//            tableView.insertRows(at: [indexPath], with: .automatic)
-//            tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-//        }
-//    }
-//
-//}
-//
-//extension ViewController: UITableViewDataSource, UITableViewDelegate {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return weightedItemsArray.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-//        cell.textLabel?.text = weightedItemsArray[indexPath.row].weightedItem
-//        cell.detailTextLabel?.text = weightedItemsArray[indexPath.row].personResponsible
-//        return cell
-//    }
-//
-//
-//}
+
 
 
 
